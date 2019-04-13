@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta ico>
+    <title>Asistencia</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        label {
+            font-weight: bold;
+        }
+
+        .logo {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo>img {
+            width: 80px;
+        }
+
+        .glyphicon {
+            margin-right: 5px;
+        }
+
+        .resumen {
+            text-align: center;
+        }
+
+        .resumen>img {
+            width: 80px;
+            margin: 10px 0 10px 0;
+        }
+
+        .resumen>span {
+            display: block;
+            text-align: left;
+        }
+
+        .resumen>span>b {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <a class="navbar-brand" href="/">Asistencia</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-24 col-sm-offset-6 col-sm-12 col-md-offset-8 col-md-8 col-lg-8">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Registro de asistencia
+                        </div>
+                        <div class="panel-body">
+                            <div class="logo">
+                                <img src="{% static 'images/logo.png' %}" alt="logo">
+                            </div>
+                            <div class="form-group">
+                                <label for="document">Ingrese su número de documento:</label>
+                                <input type="number" id="document" name="document" class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right">
+                            <button type="submit" class="btn btn-default btn-success"><span
+                                    class="glyphicon glyphicon-ok-sign"></span>Registrar</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Resumen de la asistencia
+                    </div>
+                    <div class="panel-body">
+                        <div class="resumen">
+                            <img src="{% static 'images/usuario.jpg' %}" alt="logo" class="img-thumbnail">
+                            <span><b>Nombre:</b>William Condori Quispe</span>
+                            <span><b>N° de documento:</b>76585806</span>
+                            <span><b>Hora registrada:</b>8:00 am</span>
+                            <span><b>Estado:</b><span class="label label-success">CORRECTO</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
